@@ -2,20 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Selection</title>
+    <title>Restaurant Selection Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Select a Restaurant</h1>
-        <div class="buttons">
-            <a href="https://www.popeyes.in/" class="btn popeyes">Popeyes</a>
-            <a href="https://mcdindia.com/" class="btn mcdonalds">McDonald's</a>
-            <a href="https://online.kfc.co.in/" class="btn kfc">KFC</a>
-            <a href="https://subway.in/" class="btn subway">Subway</a>
+        <h1>Select Your Favorite Restaurant</h1>
+        <ul>
+            <li><a href="https://www.popeyes.in/" target="_blank">Popeyes</a></li>
+            <li><a href="https://mcdindia.com/" target="_blank">McDonald's</a></li>
+            <li><a href="https://online.kfc.co.in/" target="_blank">KFC</a></li>
+            <li><a href="https://subway.in/" target="_blank">Subway</a></li>
+        </ul>
+        
+        <!-- New Section for App Links -->
+        <div class="app-order-section">
+            <h2>or order directly from the apps</h2>
+            <ul class="app-links">
+                <li><a href="swiggy://" class="app-link">Open Swiggy</a></li>
+                <li><a href="zomato://" class="app-link">Open Zomato</a></li>
+            </ul>
         </div>
     </div>
+
+    <script>
+        // Optional: You can add some JS to detect mobile and notify users if they click on the link on desktop
+        document.querySelectorAll('.app-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    alert('This feature works only on mobile devices with the respective app installed.');
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
